@@ -2,6 +2,7 @@ package br.com.dbserver.tasks;
 
 import br.com.dbserver.appobjects.IndexAppObject;
 import br.com.dbserver.utils.WaitElement;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -14,9 +15,9 @@ public class IndexTask {
         index = new IndexAppObject(_driver);
     }
 
-    public void singIn(String email, String password) {
+    public void singIn(String email, String password, String search) {
         acessMyAccount(email, password);
-        searchProduct();
+        searchProduct(search);
     }
 
     private void acessMyAccount(String email, String password) {
@@ -26,7 +27,8 @@ public class IndexTask {
         WaitElement.toBeClickable(driver, index.getSignInAuthButton()).click();
     }
 
-    private void searchProduct() {
-
+    private void searchProduct(String search) {
+        WaitElement.toBeClickable(driver, index.getSearchProductTextField()).sendKeys(search);
+        WaitElement.toBeClickable(driver, index.getSearchProductTextField()).sendKeys(Keys.ENTER);
     }
 }

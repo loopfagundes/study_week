@@ -26,4 +26,8 @@ public class IndexAppObject {
     public WebElement getSignInAuthButton() {
         return driver.findElement(By.id("SubmitLogin"));
     }
+
+    public WebElement getSearchProductTextField() {
+        return driver.findElement(By.id("search_query_top"));
+    }
 }

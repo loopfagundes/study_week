@@ -2,16 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-02-25T13:32:36 BRT" name="Surefire suite" finished-at="2021-02-25T13:32:36 BRT" duration-ms="156">
+  <suite started-at="2021-02-25T14:49:03 BRT" name="Surefire suite" finished-at="2021-02-25T14:49:15 BRT" duration-ms="11287">
     <groups>
     </groups>
-    <test started-at="2021-02-25T13:32:36 BRT" name="Surefire test" finished-at="2021-02-25T13:32:36 BRT" duration-ms="156">
-      <class name="br.com.dbserver.AppTest">
-        <test-method signature="shouldAnswerWithTrue()" started-at="2021-02-25T13:32:36 BRT" name="shouldAnswerWithTrue" finished-at="2021-02-25T13:32:36 BRT" duration-ms="30" status="PASS">
+    <test started-at="2021-02-25T14:49:03 BRT" name="Surefire test" finished-at="2021-02-25T14:49:15 BRT" duration-ms="11287">
+      <class name="br.com.dbserver.testcases.BuySuccessfullyTestCase">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:br.com.dbserver.testcases.BuySuccessfullyTestCase@35d019a3]" started-at="2021-02-25T14:49:03 BRT" name="setUp" finished-at="2021-02-25T14:49:07 BRT" duration-ms="3723" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- shouldAnswerWithTrue -->
-      </class> <!-- br.com.dbserver.AppTest -->
+        </test-method> <!-- setUp -->
+        <test-method signature="test()[pri:0, instance:br.com.dbserver.testcases.BuySuccessfullyTestCase@35d019a3]" started-at="2021-02-25T14:49:07 BRT" name="test" finished-at="2021-02-25T14:49:14 BRT" duration-ms="6734" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:br.com.dbserver.testcases.BuySuccessfullyTestCase@35d019a3]" started-at="2021-02-25T14:49:14 BRT" name="tearDown" finished-at="2021-02-25T14:49:15 BRT" duration-ms="749" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- br.com.dbserver.testcases.BuySuccessfullyTestCase -->
     </test> <!-- Surefire test -->
   </suite> <!-- Surefire suite -->
 </testng-results>

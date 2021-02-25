@@ -1,1 +1,2 @@
-br\com\dbserver\App.class
+br\com\dbserver\utils\BaseTest.class
+br\com\dbserver\utils\WaitElement.class

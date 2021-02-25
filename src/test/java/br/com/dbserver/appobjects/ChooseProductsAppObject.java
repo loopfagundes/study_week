@@ -31,4 +31,8 @@ public class ChooseProductsAppObject {
     public WebElement getSearchFadedShortSleeveTShirtsButton() {
         return driver.findElement(By.id("search_query_top"));
     }
+
+    public WebElement getChooseProductFadedButton() {
+        return driver.findElement(By.cssSelector("img[title='Faded Short Sleeve T-shirts']"));
+    }
 }

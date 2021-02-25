@@ -34,5 +34,6 @@ public class ChooseProductTask {
     private void productTwo(String search) {
         WaitElement.toBeClickable(driver, chooseProductsAppObject.getSearchFadedShortSleeveTShirtsButton()).sendKeys(search);
         WaitElement.toBeClickable(driver, chooseProductsAppObject.getSearchFadedShortSleeveTShirtsButton()).sendKeys(Keys.ENTER);
+        WaitElement.toBeClickable(driver, chooseProductsAppObject.getChooseProductFadedButton()).click();
     }
 }

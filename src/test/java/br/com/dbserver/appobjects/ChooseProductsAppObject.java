@@ -10,6 +10,9 @@ public class ChooseProductsAppObject {
     public ChooseProductsAppObject(WebDriver _driver) {
         driver = _driver;
     }
+    public WebElement getSearchProductTextField() {
+        return driver.findElement(By.id("search_query_top"));
+    }
 
     public WebElement getProductBlouseButton() {
         return driver.findElement(By.cssSelector("div[class='product-container'] div[class='product-image-container'] a[title='Blouse']"));

@@ -14,6 +14,6 @@ public class WaitElement {
     public static WebElement toBeClickable(WebDriver driver, WebElement element) {
         WebDriverWait wait = new WebDriverWait(driver, 15);
         WebElement waitElement = wait.until(ExpectedConditions.visibilityOf(element));
-        return wait.until(ExpectedConditions.elementToBeClickable(element));
+        return wait.until(ExpectedConditions.elementToBeClickable(waitElement));
     }
 }

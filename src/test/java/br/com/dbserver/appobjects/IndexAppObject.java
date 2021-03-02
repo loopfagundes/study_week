@@ -15,19 +15,11 @@ public class IndexAppObject {
         return driver.findElement(By.cssSelector("a[title='Log in to your customer account']"));
     }
 
-    public WebElement getEmailTextField() {
-        return driver.findElement(By.id("email"));
+    public WebElement getCreateEmailTextField() {
+        return driver.findElement(By.id("email_create"));
     }
 
-    public WebElement getPasswordTextField() {
-        return driver.findElement(By.id("passwd"));
-    }
-
-    public WebElement getSignInAuthButton() {
-        return driver.findElement(By.id("SubmitLogin"));
-    }
-
-    public WebElement getSearchProductTextField() {
-        return driver.findElement(By.id("search_query_top"));
+    public WebElement getCreateAnAccountButton() {
+        return driver.findElement(By.id("SubmitCreate"));
     }
 }

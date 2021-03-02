@@ -14,9 +14,15 @@ public class ChooseProductTask {
         chooseProductsAppObject = new ChooseProductsAppObject(_driver);
     }
 
-    public void detailsProducts(String search) {
+    public void detailsProducts(String search, String newSearch) {
+        searchProduct(search);
         productBlouse();
-        productTwo(search);
+        productTwo(newSearch);
+    }
+
+    private void searchProduct(String search) {
+        WaitElement.toBeClickable(driver, chooseProductsAppObject.getSearchProductTextField()).sendKeys(search);
+        WaitElement.toBeClickable(driver, chooseProductsAppObject.getSearchProductTextField()).sendKeys(Keys.ENTER);
     }
 
     private void productBlouse() {
@@ -31,8 +37,8 @@ public class ChooseProductTask {
         iframeDriver.switchTo().defaultContent();
     }
 
-    private void productTwo(String search) {
-        WaitElement.toBeClickable(driver, chooseProductsAppObject.getSearchFadedShortSleeveTShirtsButton()).sendKeys(search);
+    private void productTwo(String newSearch) {
+        WaitElement.toBeClickable(driver, chooseProductsAppObject.getSearchFadedShortSleeveTShirtsButton()).sendKeys(newSearch);
         WaitElement.toBeClickable(driver, chooseProductsAppObject.getSearchFadedShortSleeveTShirtsButton()).sendKeys(Keys.ENTER);
         WaitElement.toBeClickable(driver, chooseProductsAppObject.getChooseProductFadedButton()).click();
     }

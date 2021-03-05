@@ -1,4 +1,4 @@
-package br.com.dbserver.appobjects;
+package br.com.dbserver.pageobjects;
 
 import br.com.dbserver.utils.WaitElement;
 import org.openqa.selenium.By;
@@ -101,5 +101,27 @@ public class BuyProductPageObject {
 
     public WebElement searchProductTextField() {
         return waitElement.toBeClickable(By.id("search_query_top"));
+    }
+
+    public WebElement chooseProductBlouseButton() {
+        return waitElement.toBeClickable(By.cssSelector("div[class='product-container'] div[class='product-image-container'] a[title='Blouse']"));
+    }
+
+    public WebElement validateNameProductLabel() {
+        WebElement iframeElement = waitElement.visibilityOf(By.className("fancybox-iframe"));
+        WebDriver iframeDriver = driver.switchTo().frame(iframeElement);
+        return iframeDriver.findElement(By.cssSelector("#product > div > div > div.pb-center-column.col-xs-12.col-sm-4 > h1"));
+    }
+
+    public WebElement colorProductBlouseButton() {
+        WebElement iframeElement = waitElement.visibilityOf(By.className("fancybox-iframe"));
+        WebDriver iframeDriver = driver.switchTo().frame(iframeElement);
+        return iframeDriver.findElement(By.id("color_8"));
+    }
+
+    public Select sizeProductBlouseComboBox() {
+        WebElement iframeElement = waitElement.visibilityOf(By.className("fancybox-iframe"));
+        WebDriver iframeDriver = driver.switchTo().frame(iframeElement);
+        return new Select(iframeDriver.findElement(By.id("group_1")));
     }
 }

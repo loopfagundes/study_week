@@ -1,6 +1,6 @@
 package br.com.dbserver.steps;
 
-import br.com.dbserver.appobjects.BuyProductPageObject;
+import br.com.dbserver.pageobjects.BuyProductPageObject;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.service.ExtentTestManager;
 import com.github.javafaker.Faker;
@@ -11,10 +11,12 @@ import org.testng.Assert;
 import static br.com.dbserver.utils.Screenshot.*;
 
 public class BuyProductStep {
+    private final WebDriver driver;
     private final Faker faker;
     private final BuyProductPageObject buyProductPageObject;
 
-    public BuyProductStep(WebDriver driver) {
+    public BuyProductStep(WebDriver _driver) {
+        driver = _driver;
         faker = new Faker();
         buyProductPageObject = new BuyProductPageObject(driver);
     }
@@ -57,9 +59,20 @@ public class BuyProductStep {
     }
 
     public BuyProductStep pageMyAccount(String searchProduct) {
-        Assert.assertEquals(buyProductPageObject.validatePageMyAccountLabel().getText(), "MY ACCOUNT");
+        //Assert.assertEquals(buyProductPageObject.validatePageMyAccountLabel().getText(), "MY ACCOUNT");
         buyProductPageObject.searchProductTextField().sendKeys(searchProduct);
         buyProductPageObject.searchProductTextField().sendKeys(Keys.ENTER);
+        return this;
+    }
+
+    public BuyProductStep chooseProductBlouse() {
+        buyProductPageObject.chooseProductBlouseButton().click();
+        Assert.assertEquals(buyProductPageObject.validateNameProductLabel().getText(), "Blouse");
+        driver.switchTo().defaultContent();
+        buyProductPageObject.colorProductBlouseButton().click();
+        driver.switchTo().defaultContent();
+        buyProductPageObject.sizeProductBlouseComboBox().selectByValue("2");
+        driver.switchTo().defaultContent();
         return this;
     }
 }

@@ -138,4 +138,6 @@ public class BuyProductPageObject {
     public WebElement continueShoppingButton() {
         return waitElement.toBeClickable(By.cssSelector("a[title='Continue shopping']"));
     }
+
+    //continue
 }

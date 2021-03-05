@@ -1,6 +1,7 @@
 package br.com.dbserver.steps;
 
 import br.com.dbserver.pageobjects.BuyProductPageObject;
+import br.com.dbserver.utils.Screenshot;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.service.ExtentTestManager;
 import com.github.javafaker.Faker;
@@ -68,6 +69,15 @@ public class BuyProductStep {
         driver.switchTo().defaultContent();
         buyProductPageObject.sizeProductComboBox().selectByValue("2");
         driver.switchTo().defaultContent();
+        buyProductPageObject.iframeAddToCartButton().click();
+        driver.switchTo().defaultContent();
+        if(buyProductPageObject.modalProceedToCheckoutButton().isDisplayed()) {
+            buyProductPageObject.modalProceedToCheckoutButton().click();
+            ExtentTestManager.getTest().log(Status.PASS, "Adicionado uma bulsa no carrinho.");
+        } else {
+            ExtentTestManager.getTest().log(Status.FAIL, "Nao foi possivel adicionar uma bulsa no carrinho.", Screenshot.capture());
+        }
+        buyProductPageObject.continueShoppingButton().click();
         return this;
     }
 }

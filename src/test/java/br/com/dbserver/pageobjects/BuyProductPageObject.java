@@ -124,4 +124,18 @@ public class BuyProductPageObject {
         WebDriver iframeDriver = driver.switchTo().frame(iframeElement);
         return new Select(iframeDriver.findElement(By.id("group_1")));
     }
+
+    public WebElement iframeAddToCartButton() {
+        WebElement iframeElement = waitElement.visibilityOf(By.className("fancybox-iframe"));
+        WebDriver iframeDriver = driver.switchTo().frame(iframeElement);
+        return iframeDriver.findElement(By.cssSelector("button[name='Submit']"));
+    }
+
+    public WebElement modalProceedToCheckoutButton() {
+        return waitElement.toBeClickable(By.cssSelector("a[title='Proceed to checkout']"));
+    }
+
+    public WebElement continueShoppingButton() {
+        return waitElement.toBeClickable(By.cssSelector("a[title='Continue shopping']"));
+    }
 }

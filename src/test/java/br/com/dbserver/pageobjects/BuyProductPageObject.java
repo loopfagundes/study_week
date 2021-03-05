@@ -103,7 +103,7 @@ public class BuyProductPageObject {
         return waitElement.toBeClickable(By.id("search_query_top"));
     }
 
-    public WebElement chooseProductBlouseButton() {
+    public WebElement chooseProductButton() {
         return waitElement.toBeClickable(By.cssSelector("div[class='product-container'] div[class='product-image-container'] a[title='Blouse']"));
     }
 
@@ -113,13 +113,13 @@ public class BuyProductPageObject {
         return iframeDriver.findElement(By.cssSelector("#product > div > div > div.pb-center-column.col-xs-12.col-sm-4 > h1"));
     }
 
-    public WebElement colorProductBlouseButton() {
+    public WebElement colorProductButton() {
         WebElement iframeElement = waitElement.visibilityOf(By.className("fancybox-iframe"));
         WebDriver iframeDriver = driver.switchTo().frame(iframeElement);
         return iframeDriver.findElement(By.id("color_8"));
     }
 
-    public Select sizeProductBlouseComboBox() {
+    public Select sizeProductComboBox() {
         WebElement iframeElement = waitElement.visibilityOf(By.className("fancybox-iframe"));
         WebDriver iframeDriver = driver.switchTo().frame(iframeElement);
         return new Select(iframeDriver.findElement(By.id("group_1")));

@@ -18,7 +18,6 @@ public class BuySuccessfullyTestCase extends BaseTest {
                 //.indexAccessLogin()
                 //.createAnAccount()
                 //.registerNewUser()
-                .pageMyAccount("Dress")
-                .chooseProductBlouse();
+                .chooseProductBlouse("dress");
     }
 }

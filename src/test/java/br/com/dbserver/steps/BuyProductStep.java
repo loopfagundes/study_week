@@ -55,23 +55,18 @@ public class BuyProductStep {
         } else {
             ExtentTestManager.getTest().log(Status.FAIL, "Nao foi possivel registrar.", capture());
         }
+        Assert.assertEquals(buyProductPageObject.validatePageMyAccountLabel().getText(), "MY ACCOUNT");
         return this;
     }
-
-    public BuyProductStep pageMyAccount(String searchProduct) {
-        //Assert.assertEquals(buyProductPageObject.validatePageMyAccountLabel().getText(), "MY ACCOUNT");
+    public BuyProductStep chooseProductBlouse(String searchProduct) {
         buyProductPageObject.searchProductTextField().sendKeys(searchProduct);
         buyProductPageObject.searchProductTextField().sendKeys(Keys.ENTER);
-        return this;
-    }
-
-    public BuyProductStep chooseProductBlouse() {
-        buyProductPageObject.chooseProductBlouseButton().click();
+        buyProductPageObject.chooseProductButton().click();
         Assert.assertEquals(buyProductPageObject.validateNameProductLabel().getText(), "Blouse");
         driver.switchTo().defaultContent();
-        buyProductPageObject.colorProductBlouseButton().click();
+        buyProductPageObject.colorProductButton().click();
         driver.switchTo().defaultContent();
-        buyProductPageObject.sizeProductBlouseComboBox().selectByValue("2");
+        buyProductPageObject.sizeProductComboBox().selectByValue("2");
         driver.switchTo().defaultContent();
         return this;
     }

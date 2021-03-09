@@ -24,7 +24,7 @@ Este projeto foi feito no IntelliJ, porém, pode ser usar a IDE sua preferência
 
 - **Executar na sua máquina local:** 
 
-Utilizar terminal o comando `mvn test` ou na sua IDE. 
+Utilizar terminal o comando `mvn test` na sua IDE. 
 
 - **Executar com browser de firefox:** 
   

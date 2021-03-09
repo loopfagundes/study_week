@@ -42,6 +42,7 @@ Para executar o projeto via comando, é primeiro ter o Maven instalado e configu
 Foi feito? Abra dentro da pasta do projeto, abrir o CMD e digite o comando: `mvn test`
 
 ---
+
 ## Report
 
 Visualizar o report apos de executou, abra a pasta de report > report.html, clique com a botão direito do mouse > Open in > Browser > escolher a browser da sua perferencia.

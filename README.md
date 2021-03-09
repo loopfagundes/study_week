@@ -24,7 +24,7 @@ Este projeto foi feito no IntelliJ, porém, pode ser usar a IDE sua preferência
 
 - **Executar na sua máquina local:** 
 
-Utilizar terminal na sua IDE e digite o comando: `mvn test` 
+Utilizar terminal na sua IDE e digite o comando: `mvn test`.
 
 - **Executar com browser de firefox:** 
   
@@ -42,6 +42,7 @@ Para executar o projeto via comando, é primeiro ter o Maven instalado e configu
 Foi feito? Abra dentro da pasta do projeto, abrir o CMD e digite o comando: `mvn test`
 
 ---
-## Report
+
+### Report
 
 Visualizar o report apos de executou, abra a pasta de report > report.html, clique com a botão direito do mouse > Open in > Browser > escolher a browser da sua perferencia.

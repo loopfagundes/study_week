@@ -138,4 +138,98 @@ public class BuyProductPageObject {
     public WebElement continueShoppingButton() {
         return waitElement.toBeClickable(By.cssSelector("a[title='Continue shopping']"));
     }
+
+    public WebElement searchMoreProductTextField() {
+        return waitElement.toBeClickable(By.id("search_query_top"));
+    }
+
+    public WebElement chooseMoreProductButton() {
+        return waitElement.toBeClickable(By.cssSelector("div[class='product-container'] img[title='Printed Chiffon Dress']"));
+    }
+
+    public WebElement validateProductLabel() {
+        WebElement iframeElement = waitElement.visibilityOf(By.className("fancybox-iframe"));
+        WebDriver iframeDriver = driver.switchTo().frame(iframeElement);
+        return iframeDriver.findElement(By.cssSelector("#product > div > div > div.pb-center-column.col-xs-12.col-sm-4 > h1"));
+    }
+
+    public Select sizeProductDressComboBox() {
+        WebElement iframeElement = waitElement.visibilityOf(By.className("fancybox-iframe"));
+        WebDriver iframeDriver = driver.switchTo().frame(iframeElement);
+        return new Select(iframeDriver.findElement(By.id("group_1")));
+    }
+
+    public WebElement addToCartButton() {
+        WebElement iframeElement = waitElement.visibilityOf(By.className("fancybox-iframe"));
+        WebDriver iframeDriver = driver.switchTo().frame(iframeElement);
+        return iframeDriver.findElement(By.cssSelector("#add_to_cart > button > span"));
+    }
+
+    public WebElement proceedToCheckoutButton() {
+        return waitElement.toBeClickable(By.cssSelector("a[title='Proceed to checkout']"));
+    }
+
+    public WebElement validateStageShoppingSummaryLabel() {
+        return waitElement.visibilityOf(By.id("cart_title"));
+    }
+
+    public WebElement validatePriceTotalSummaryLabel() {
+        return waitElement.visibilityOf(By.id("total_price"));
+    }
+
+    public WebElement stageSummaryProceedToCheckoutButton() {
+        return waitElement.toBeClickable(By.cssSelector("#center_column > p.cart_navigation.clearfix > a.button.btn.btn-default > span"));
+    }
+
+    public WebElement validateAddressStepLabel() {
+        return waitElement.visibilityOf(By.cssSelector("#center_column > h1"));
+    }
+
+    public WebElement stageAddressProceedToCheckout() {
+        return waitElement.toBeClickable(By.cssSelector("#center_column > form > p > button > span"));
+    }
+
+    public WebElement validateShippingStepLabel() {
+        return waitElement.visibilityOf(By.cssSelector("#carrier_area > h1"));
+    }
+
+    public WebElement termsOfServiceCheckBox() {
+        return driver.findElement(By.id("cgv"));
+    }
+
+    public WebElement shippingProceedToCheckoutButton() {
+        return waitElement.toBeClickable(By.cssSelector("#form > p > button > span"));
+    }
+
+    public WebElement validatePaymentMethodStepLabel() {
+        return waitElement.visibilityOf(By.cssSelector("#center_column > h1"));
+    }
+
+    public WebElement validateTotalPaymentPriceLabel() {
+        return waitElement.visibilityOf(By.id("total_price"));
+    }
+
+    public WebElement choosePaymentMethodButton() {
+        return waitElement.toBeClickable(By.className("bankwire"));
+    }
+
+    public WebElement iConfirmMyOrderButton() {
+        return waitElement.toBeClickable(By.cssSelector("#cart_navigation > button > span"));
+    }
+
+    public WebElement validateOrderConfirmationStepLabel() {
+        return waitElement.visibilityOf(By.cssSelector("#center_column > h1"));
+    }
+
+    public WebElement validateYourOrderIsCompleteLabel() {
+        return waitElement.visibilityOf(By.cssSelector("#center_column > div > p > strong"));
+    }
+
+    public WebElement signOutButton() {
+        return waitElement.toBeClickable(By.cssSelector("a[title='Log me out']"));
+    }
+
+    public WebElement validateLoginPageLabel() {
+        return waitElement.visibilityOf(By.cssSelector("#center_column > h1"));
+    }
 }

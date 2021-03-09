@@ -59,6 +59,7 @@ public class BuyProductStep {
         Assert.assertEquals(buyProductPageObject.validatePageMyAccountLabel().getText(), "MY ACCOUNT");
         return this;
     }
+
     public BuyProductStep chooseProductBlouse(String searchProduct) {
         buyProductPageObject.searchProductTextField().sendKeys(searchProduct);
         buyProductPageObject.searchProductTextField().sendKeys(Keys.ENTER);
@@ -71,13 +72,64 @@ public class BuyProductStep {
         driver.switchTo().defaultContent();
         buyProductPageObject.iframeAddToCartButton().click();
         driver.switchTo().defaultContent();
-        if(buyProductPageObject.modalProceedToCheckoutButton().isDisplayed()) {
+        if (buyProductPageObject.modalProceedToCheckoutButton().isDisplayed()) {
             buyProductPageObject.modalProceedToCheckoutButton().click();
             ExtentTestManager.getTest().log(Status.PASS, "Adicionado uma bulsa no carrinho.");
         } else {
             ExtentTestManager.getTest().log(Status.FAIL, "Nao foi possivel adicionar uma bulsa no carrinho.", Screenshot.capture());
         }
         buyProductPageObject.continueShoppingButton().click();
+        return this;
+    }
+
+    public BuyProductStep chooseProductPrintedChiffonDress(String searchProduct) {
+        buyProductPageObject.searchMoreProductTextField().clear();
+        buyProductPageObject.searchMoreProductTextField().sendKeys(searchProduct);
+        buyProductPageObject.searchMoreProductTextField().sendKeys(Keys.ENTER);
+        buyProductPageObject.chooseMoreProductButton().click();
+        Assert.assertEquals(buyProductPageObject.validateProductLabel().getText(), "Printed Chiffon Dress");
+        driver.switchTo().defaultContent();
+        buyProductPageObject.sizeProductDressComboBox().selectByValue("2");
+        driver.switchTo().defaultContent();
+        buyProductPageObject.addToCartButton().click();
+        driver.switchTo().defaultContent();
+
+        if (buyProductPageObject.proceedToCheckoutButton().isDisplayed()) {
+            buyProductPageObject.proceedToCheckoutButton().click();
+            ExtentTestManager.getTest().log(Status.PASS, "Adicionado um vestido no carrinho.");
+        } else {
+            ExtentTestManager.getTest().log(Status.FAIL, "Nao foi possivel adicionar um vestido no carrinho.", Screenshot.capture());
+        }
+        return this;
+    }
+
+    public BuyProductStep orderToCart() {
+        Assert.assertEquals(buyProductPageObject.validateStageShoppingSummaryLabel().getText(), "SHOPPING-CART SUMMARY\n" +
+                "Your shopping cart contains: 2 Products");
+        Assert.assertEquals(buyProductPageObject.validatePriceTotalSummaryLabel().getText(), "$45.40");
+        buyProductPageObject.stageSummaryProceedToCheckoutButton().click();
+        Assert.assertEquals(buyProductPageObject.validateAddressStepLabel().getText(), "ADDRESSES");
+        buyProductPageObject.stageAddressProceedToCheckout().click();
+        Assert.assertEquals(buyProductPageObject.validateShippingStepLabel().getText(), "SHIPPING");
+        buyProductPageObject.termsOfServiceCheckBox().click();
+        buyProductPageObject.shippingProceedToCheckoutButton().click();
+        return this;
+    }
+
+    public BuyProductStep paymentMethod() {
+        Assert.assertEquals(buyProductPageObject.validatePaymentMethodStepLabel().getText(), "PLEASE CHOOSE YOUR PAYMENT METHOD");
+        Assert.assertEquals(buyProductPageObject.validateTotalPaymentPriceLabel().getText(), "$45.40");
+        buyProductPageObject.choosePaymentMethodButton().click();
+        if(buyProductPageObject.iConfirmMyOrderButton().isDisplayed()) {
+            buyProductPageObject.iConfirmMyOrderButton().click();
+            ExtentTestManager.getTest().log(Status.PASS, "O pedido foi concluido!");
+        } else {
+            ExtentTestManager.getTest().log(Status.FAIL, "O pedido nao foi concluido.", Screenshot.capture());
+        }
+        Assert.assertEquals(buyProductPageObject.validateOrderConfirmationStepLabel().getText(), "ORDER CONFIRMATION");
+        Assert.assertEquals(buyProductPageObject.validateYourOrderIsCompleteLabel().getText(), "Your order on My Store is complete.");
+        buyProductPageObject.signOutButton().click();
+        Assert.assertEquals(buyProductPageObject.validateLoginPageLabel().getText(), "AUTHENTICATION");
         return this;
     }
 }

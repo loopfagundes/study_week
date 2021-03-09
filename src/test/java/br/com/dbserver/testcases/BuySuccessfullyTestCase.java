@@ -15,9 +15,12 @@ public class BuySuccessfullyTestCase extends BaseTest {
         driver.get(Property.get("url"));
         BuyProductStep buyProductStep = new BuyProductStep(driver);
         buyProductStep
-                //.indexAccessLogin()
-                //.createAnAccount()
-                //.registerNewUser()
-                .chooseProductBlouse("dress");
+                .indexAccessLogin()
+                .createAnAccount()
+                .registerNewUser()
+                .chooseProductBlouse("Dress")
+                .chooseProductPrintedChiffonDress("Printed Chiffon Dress")
+                .orderToCart()
+                .paymentMethod();
     }
 }

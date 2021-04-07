@@ -3,3 +3,4 @@
 report/
 target/
 *.iml
+.vscode/

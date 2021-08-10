@@ -13,7 +13,6 @@ Para teste de fluxo de comprar até no final de pedido.
 - [TestNG 7.3.0](https://mvnrepository.com/artifact/org.testng/testng/7.3.0),
 - [Selenium Java 3.141.59](https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java/3.141.59),
 - [WebDriverManager 4.3.1](https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager/4.3.1),
-- [ExtentReports 4.0.9](https://mvnrepository.com/artifact/com.aventstack/extentreports/4.0.9),
 - [ExtentReports TestNG Adapter 1.0.3](https://mvnrepository.com/artifact/com.aventstack/extentreports-testng-adapter/1.0.3),
 - [Java Faker 1.0.2](https://mvnrepository.com/artifact/com.github.javafaker/javafaker/1.0.2),
 ---
